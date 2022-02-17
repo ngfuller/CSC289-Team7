@@ -11,6 +11,5 @@ import {name as appName} from './app.json';
 
 //TEST AGAIN
 
-// Testing Robbie's computer
 
 AppRegistry.registerComponent(appName, () => App);
