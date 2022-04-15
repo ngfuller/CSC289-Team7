@@ -50,13 +50,15 @@ const keyExtractor = (item: PantryItem, index: number) => {
 
 class PantryComponent extends Component<{}, PantryComponentState> {
   componentDidMount() {
-    this.doTask().then();
+    loadPantryItems().then(u => {
+      this.setState({items: u});
+    });
   }
 
-  doTask = async () => {
-    const pantryItems = await loadPantryItems();
-    this.setState({items: pantryItems});
-  };
+  componentWillUnmount() {
+    new AbortController().abort();
+    this.setState(null);
+  }
 
   render() {
     if (this.state == null) {
