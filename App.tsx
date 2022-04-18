@@ -5,7 +5,7 @@ import {
   DrawerScreenProps,
 } from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
-import PantryComponent from './src/Component/Pantry';
+import PantryComponent from './src/Component/Pantry/Pantry';
 
 type RootComponentParameters = {
   Pantry: undefined;

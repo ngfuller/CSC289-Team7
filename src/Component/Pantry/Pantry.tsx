@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {StatusBar, StyleSheet, Text, View, VirtualizedList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {loadPantryItems, PantryItem} from '../PantryItem';
+import {loadPantryItems, PantryItem} from '../../PantryItem';
+import FoodItem from './FoodItem';
 
 type PantryComponentState = {
   items: PantryItem[];
@@ -24,17 +25,6 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
 });
-
-const Item = ({name, quantity}: PantryItem) => {
-  return (
-    <View style={styles.item}>
-      <Text style={styles.title}>
-        {name}
-        {quantity}
-      </Text>
-    </View>
-  );
-};
 
 const getItem = (data: PantryItem[], index: number) => {
   return data[index];
@@ -71,7 +61,7 @@ class PantryComponent extends Component<{}, PantryComponentState> {
           data={this.state.items}
           initialNumToRender={4}
           renderItem={({item}) => (
-            <Item name={item.name} quantity={item.quantity} />
+            <FoodItem name={item.name} quantity={item.quantity} />
           )}
           keyExtractor={keyExtractor}
           getItemCount={getItemCount}
