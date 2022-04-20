@@ -14,19 +14,22 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
-    fontSize: 45,
-    color: '#66e315',
+    fontSize: 25,
+    color: '#4078f1',
+  },
+  quantity: {
+    marginLeft: 180,
   },
 });
 
 const FoodItem = ({name, quantity}: PantryItem) => {
   return (
     <View style={styles.item}>
-      <View style={styles.title}>
-        <Text>{name}</Text>
+      <View>
+        <Text style={styles.title}>{name}</Text>
       </View>
       <View>
-        <Text>{quantity}</Text>
+        <Text style={styles.quantity}>{quantity}</Text>
       </View>
     </View>
   );
