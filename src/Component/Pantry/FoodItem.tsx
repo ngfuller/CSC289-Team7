@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
-import {StatusBar, StyleSheet, Text, View, VirtualizedList} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
 import {PantryItem} from '../../PantryItem';
 
 const styles = StyleSheet.create({
@@ -13,16 +12,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     padding: 20,
   },
-  title: {
-    fontSize: 45,
-    color: '#66e315',
-  },
 });
 
 const FoodItem = ({name, quantity}: PantryItem) => {
   return (
     <View style={styles.item}>
-      <View style={styles.title}>
+      <View>
         <Text>{name}</Text>
       </View>
       <View>

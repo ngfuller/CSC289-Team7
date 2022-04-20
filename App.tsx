@@ -1,11 +1,12 @@
 import * as React from 'react';
-import {Button, View} from 'react-native';
+import {View} from 'react-native';
 import {
   createDrawerNavigator,
   DrawerScreenProps,
 } from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
-import PantryComponent from './src/Component/Pantry/Pantry';
+import PantryComponent from './src/Component/Pantry/PantryView';
+import ItemEntry from './src/Component/Pantry/ItemEntry';
 
 type RootComponentParameters = {
   Pantry: undefined;
@@ -22,10 +23,10 @@ function PantryInventory(_unused: Props) {
   );
 }
 
-function Camera({navigation}: Props) {
+function Camera(_unused: Props) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
+      <ItemEntry />
     </View>
   );
 }

@@ -10,8 +10,8 @@ type PantryComponentState = {
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: 'center',
     flex: 1,
-    marginTop: StatusBar.currentHeight,
   },
   item: {
     backgroundColor: '#f9c2ff',
@@ -20,6 +20,13 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     marginHorizontal: 16,
     padding: 20,
+  },
+  pantryView: {
+    backgroundColor: '#fff',
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
   },
   title: {
     fontSize: 32,
@@ -57,16 +64,18 @@ class PantryComponent extends Component<{}, PantryComponentState> {
 
     return (
       <SafeAreaView style={styles.container}>
-        <VirtualizedList
-          data={this.state.items}
-          initialNumToRender={4}
-          renderItem={({item}) => (
-            <FoodItem name={item.name} quantity={item.quantity} />
-          )}
-          keyExtractor={keyExtractor}
-          getItemCount={getItemCount}
-          getItem={getItem}
-        />
+        <View style={styles.pantryView}>
+          <VirtualizedList
+            data={this.state.items}
+            initialNumToRender={4}
+            renderItem={({item}) => (
+              <FoodItem name={item.name} quantity={item.quantity} />
+            )}
+            keyExtractor={keyExtractor}
+            getItemCount={getItemCount}
+            getItem={getItem}
+          />
+        </View>
       </SafeAreaView>
     );
   }
