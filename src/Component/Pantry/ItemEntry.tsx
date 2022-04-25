@@ -1,7 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {View} from 'react-native';
+import {Button, StyleSheet, TextInput, View} from 'react-native';
 import {FloatingLabelInput} from 'react-native-floating-label-input';
 
+const styles = StyleSheet.create({
+  space: {
+    height: 10,
+  },
+});
 const ItemEntryComponent: React.FC = () => {
   const [itemName, setItemName] = useState('');
   const [quantity, setQuantity] = useState('');
@@ -23,6 +28,7 @@ const ItemEntryComponent: React.FC = () => {
       style={{
         alignItems: 'center',
         justifyContent: 'center',
+        paddingTop: 25,
         padding: 64,
         flex: 1,
         backgroundColor: '#fff',
@@ -34,7 +40,7 @@ const ItemEntryComponent: React.FC = () => {
         currencyDivider="."
         onChangeText={setItemName}
       />
-
+      <TextInput style={styles.space} />
       <FloatingLabelInput
         label="Quantity"
         value={quantity}
@@ -43,15 +49,16 @@ const ItemEntryComponent: React.FC = () => {
         keyboardType="numeric"
         onChangeText={setQuantity}
       />
-
+      <TextInput style={styles.space} />
       <FloatingLabelInput
         label="Price"
         value={price}
-        maskType="date"
+        maskType="currency"
         mask="99/99/9999"
+        keyboardType='numeric'
         onChangeText={setPrice}
       />
-
+      <TextInput style={styles.space} />
       <FloatingLabelInput
         label="Expiration Date"
         value={exprDate}
@@ -59,7 +66,7 @@ const ItemEntryComponent: React.FC = () => {
         mask="99/99/9999"
         onChangeText={setExprDate}
       />
-
+      <TextInput style={styles.space} />
       <FloatingLabelInput
         label="Low Stock"
         value={stock}
@@ -68,6 +75,8 @@ const ItemEntryComponent: React.FC = () => {
         keyboardType="numeric"
         onChangeText={setStock}
       />
+      <TextInput style={styles.space} />
+      <Button title={'Save'} />
     </View>
   );
 };

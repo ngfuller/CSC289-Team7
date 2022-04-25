@@ -12,9 +12,11 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     flex: 1,
+    padding: 30,
+    width: 400,
   },
   item: {
-    backgroundColor: '#f9c2ff',
+    backgroundColor: '#a22dad',
     height: 150,
     justifyContent: 'center',
     marginVertical: 8,

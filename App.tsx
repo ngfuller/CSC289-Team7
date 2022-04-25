@@ -7,6 +7,7 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 import PantryComponent from './src/Component/Pantry/PantryView';
 import ItemEntry from './src/Component/Pantry/ItemEntry';
+import ItemEntryComponent from './src/Component/Pantry/ItemEntry';
 
 type RootComponentParameters = {
   Pantry: undefined;

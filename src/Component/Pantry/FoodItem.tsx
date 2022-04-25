@@ -4,12 +4,12 @@ import {PantryItem} from '../../PantryItem';
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: '#b7bdbd',
+    backgroundColor: 'rgba(183,189,189,0.22)',
     height: 70,
-    width: 250,
+    width: 300,
     justifyContent: 'center',
     marginVertical: 8,
-    marginHorizontal: 16,
+    marginHorizontal: 20,
     padding: 20,
   },
   title: {
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     color: '#4078f1',
   },
   quantity: {
-    marginLeft: 180,
+    marginLeft: 220,
   },
 });
 
