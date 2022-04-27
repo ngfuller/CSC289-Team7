@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     width: 400,
   },
   item: {
-    backgroundColor: '#a22dad',
+    backgroundColor: '#8b0398',
     height: 150,
     justifyContent: 'center',
     marginVertical: 8,
@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   pantryView: {
-    backgroundColor: '#fff',
     flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',

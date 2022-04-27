@@ -36,8 +36,6 @@ const ItemEntryComponent: React.FC = () => {
       <FloatingLabelInput
         label="Item Name"
         value={itemName}
-        maskType="currency"
-        currencyDivider="."
         onChangeText={setItemName}
       />
       <TextInput style={styles.space} />
